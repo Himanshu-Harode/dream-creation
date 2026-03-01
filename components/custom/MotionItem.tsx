@@ -4,8 +4,10 @@ import { motion, Variants } from "motion/react"
 
 export default function MotionItem({
   children,
+  className,
 }: {
   children: React.ReactNode
+  className?: any
 }) {
   const item: Variants = {
     hidden: {
@@ -22,5 +24,9 @@ export default function MotionItem({
     },
   }
 
-  return <motion.div variants={item}>{children}</motion.div>
+  return (
+    <motion.div className={className} variants={item}>
+      {children}
+    </motion.div>
+  )
 }

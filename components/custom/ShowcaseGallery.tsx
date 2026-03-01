@@ -21,22 +21,18 @@ const ShowcaseGallery = ({ data }: { data: Gallery[] }) => {
     <div
       className="
       mt-8
-      md:mt-12
-      lg:mt-16
-      columns-2
-      lg:columns-3
-      xl:columns-4
-      gap-4
-      md:gap-5
-      lg:gap-6
-      space-y-4
-      md:space-y-5
-      lg:space-y-6
+  md:mt-12
+  lg:mt-16
+  columns-2
+  lg:columns-3
+  xl:columns-4
+  gap-4
+  md:gap-6
       "
     >
       <ShowcaseAnimationWrapper>
         {data.map((item) => (
-          <MotionItem key={item._id}>
+          <MotionItem key={item._id} className="mb-4 md:mb-6 lg:mb-8">
             <motion.div
               className="
           break-inside-avoid
