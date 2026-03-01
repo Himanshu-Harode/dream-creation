@@ -1,29 +1,26 @@
 "use client"
 
-import { motion } from "motion/react"
-
-const item = {
-  hidden: { opacity: 0, y: 50 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-}
+import { motion, Variants } from "motion/react"
 
 export default function MotionItem({
   children,
-  className,
 }: {
   children: React.ReactNode
-  className?: string
 }) {
-  return (
-    <motion.div variants={item} className={className}>
-      {children}
-    </motion.div>
-  )
+  const item: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.35,
+        ease: [0.22, 1, 0.36, 1], // smooth easing
+      },
+    },
+  }
+
+  return <motion.div variants={item}>{children}</motion.div>
 }
